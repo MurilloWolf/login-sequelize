@@ -1,4 +1,6 @@
 import { Request , Response} from 'express'
+import User from '../model/User'
+import  '../database'
 class UserController {
 
     /* Não foi possivel identificar o tipo automaticamente, entao foi precisso
@@ -7,9 +9,11 @@ class UserController {
      
      Não apenas que o retorno é uma promisse , mas qual tipo de dado dentro da 
      promisse*/
-    public async index(req : Request, res : Response):Promise<Response>{
-       return res.json()
-    }
+    
+    async index(req : Request, res : Response) :Promise<Response>{
+        const users = await User.findAll();
+        return res.json(users);
+}
 }
 
 export default new UserController()

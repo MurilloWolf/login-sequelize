@@ -1,6 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 import routes from './routes'
+import './database'
 class App {
     //adicionando tipos 
     //const const_name : type
@@ -21,6 +22,7 @@ class App {
 
     private database(): void {
         //conecção com banco de dados
+      
     }
 
     private routes():void{
