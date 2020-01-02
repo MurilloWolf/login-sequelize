@@ -1,5 +1,5 @@
 {
-  "name": "taberna-online",
+  "name": "login-sequelize",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/MurilloWolf/login-sequelize.git",
