@@ -4,7 +4,7 @@ const DBconfig = {
     host: "localhost",
     username: "root",
     password: "mwolf1234",
-    database: "node_f4",
+    database: "taberna",
     define: {
         timestamp: false 
     }

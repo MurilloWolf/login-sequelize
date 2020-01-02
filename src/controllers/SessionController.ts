@@ -1,7 +1,8 @@
 import { Request , Response} from 'express'
 import User from '../model/User'
 import  '../database'
-class UserController {
+
+class SessionController {
 
     /* Não foi possivel identificar o tipo automaticamente, entao foi precisso
      informar qual o tipo das variaveis Req e Res, e por fim informar qual o 
@@ -11,21 +12,12 @@ class UserController {
      promisse*/
     
     async index(req : Request, res : Response) :Promise<Response>{
-        const users = await User.findAll();
+        const {email}  = req.body
+        const users = await User.findOne({
+            where: {email},
+        });
         return res.json(users);
 }
-
-    async create(req : Request, res : Response) :Promise<Response>{
-        const {email, name, password} = req.body
-        console.log(email,name,password)
-        try{
-            const users = await User.create({ name, password, email});
-            return res.json(users);
-
-        }catch(err){
-            return res.json({erro:"esse email já esta cadastrado"})
-        }
-    }
 }
 
-export default new UserController()
+export default new SessionController()
