@@ -1,4 +1,4 @@
-import {Model, DataTypes, Sequelize, UUID, UUIDV4} from 'sequelize'
+import {Model, DataTypes, Sequelize,  UUIDV4} from 'sequelize'
 import connection from '../database'
 
 class User extends Model {
